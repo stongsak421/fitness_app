@@ -1,0 +1,2 @@
+class ActivitesList < ApplicationRecord
+end

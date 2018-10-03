@@ -1,0 +1,35 @@
+// Place all the styles related to the Site controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+h3 {
+  color: white;
+}
+
+#site_title {
+  color: white;
+}
+
+#footer_links a {
+  color: white;
+}
+
+.jumbotron {
+
+    background-image: url("../tennis.jpg");
+    background-size: auto;
+    background-repeat: no-repeat;
+    color: black;
+    height: 100vh;
+
+
+}
+
+footer {
+    padding: 25px;
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   width:100%;
+   background-color: #343a40;
+
+}

@@ -1,0 +1,17 @@
+<br>
+<div class="col-3">
+  <div class="card">
+    <img class="card-img-top" src="../running_icon.jpg" alt="card image cap">
+    <div class="card-body">
+      <h5 class="card-title">
+        <%= @post.activity %><br>
+      </h5>
+      <p class="card-text">
+        <%= @post.date %><br>
+        <%= @post.duration %> Minutes<br>
+        <%= link_to 'Edit', edit_post_path(@post) %> |
+        <%= link_to 'Back', posts_path %>
+      </p>
+    </div>
+  </div>
+  </div>

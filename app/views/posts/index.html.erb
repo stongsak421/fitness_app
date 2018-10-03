@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<% if @posts.calculate(:sum, :duration) == 0 %>
+  <h1>
+    No activity recorded!<br>
+    Get started!
+  </h1><br>
+<% else %>
+  <h1>
+    <%= @posts.calculate(:sum, :duration) %> total hours of activity!<br>
+    Great Job!
+  </h1><br>
+<% end %>
+
+
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseActivity">
+    Show All Activites
+  </button><br>
+<div class="collapse" id="collapseActivity">
+  <div class="container">
+    <div class="row">
+          <% @posts.each do |post| %>
+
+              <div class="col-3">
+                <div class="card">
+                  <img class="card-img-top" src="../running_icon.jpg" alt="card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      <%= post.activity %><br>
+                    </h5>
+                    <p class="card-text">
+                      <%= post.date %><br>
+                      <%= post.duration %> Minutes<br>
+                      <%= link_to 'Show ', post %><br>
+                      <%= link_to 'Edit ', edit_post_path(post) %><br>
+                      <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %><br>
+                    </p>
+                  </div>
+                </div>
+                </div>
+              <% end %>
+
+            </div>
+
+        </div>
+        </div>
+
+
+<br>

@@ -1,0 +1,35 @@
+<%= form_with(model: post, local: true) do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <p>
+      <%= form.label :activity %>
+      <%= form.select :activity,
+      options_for_select(["Running", "Swimming", "Hiking", "Walking", "Biking", "Rowing",
+        "Elliptical", "Jump Rope", "Skiing", "Basket Ball" ]),
+      id: "post_activity", :class => 'form-control'%>
+    </p>
+
+    <p>
+      <%= form.label :date %>
+      <%= form.date_field :date, id: "post_date", :class => 'form-control' %>
+    </p>
+
+    <p>
+      <%= form.label "Duration (minutes)" %>
+      <%= form.text_field :duration, id: "post_duration", :class => 'form-control' %>
+    </p>
+
+    <%= form.submit "Create Activity", ({:class => 'btn btn-primary'}) %>
+  </div>
+<% end %>
